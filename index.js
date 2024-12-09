@@ -23,28 +23,26 @@ app.get("/", (req, res) => {
 var charid, charactername, imgpath, extension, json;
 app.post("/search", async (req, res) => {
   var name = req.body["searchbar"];
-  const response = await axios.get(
+  try {
+    const response = await axios.get(
     `${url}v1/public/characters?ts=${timestamp}&apikey=${apikey}&hash=${hash}&nameStartsWith=${name}`
   );
   const result = response.data;
   console.log(name);
-
-    // result.data.results.forEach((element) => {
-
-    // charid = element.id;
-    // charactername = element.name;
-    // imgpath = element.thumbnail.path;
-    // extension = element.thumbnail.extension;
-    // console.log(charid,charactername,imgpath,extension);
-  //  json = result.data.results;
-  //    var div = document.createElement("div");
-  //    div.setAttribute("class", "item");
-  //    div.innerHTML = `<img src="${imgpath}.${extension}" alt="${charid}">
-  //                    <center><h5>${charactername}</h5></center>`;
-  //    content.append(div);
-    // });
     console.log(result.data.results);
    res.render("index.ejs", { data: result.data.results });
+  } catch (error) {
+     const status = res.statusCode;
+     if (status >= 400 && status <= 499){
+      res.render("index.ejs",{msg:"NO CHARACTER IN THIS NAME"});
+     }
+     else{
+      res.render("index.ejs",{msg:"SERVER PROBLEM"});
+     }
+     console.log(status);
+  }
+  
+
 });
 
 

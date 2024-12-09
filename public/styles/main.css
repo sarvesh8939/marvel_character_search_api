@@ -1,12 +1,10 @@
 * {
   margin: 0px;
 }
-body{
-  height: 700px;
-  width: 100%;
+body {
   background-image: url(../images/bg.jpg);
   background-repeat: no-repeat;
-  background-attachment:fixed ;
+  background-attachment: fixed;
   background-size: cover;
 }
 .navbar {
@@ -19,28 +17,39 @@ body{
   gap: 5px;
 }
 
-.navbar > * {
-  border-radius: 3px;
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 .searchbar {
   height: 30px;
   width: 250px;
+  border-radius: 5px;
+  background-color: #424242;
   border: none;
   outline: none;
 }
 
 .searchbar::placeholder {
-  font-size: medium;
+  font-size: small;
   padding-left: 3px;
+}
+
+.searchbar:focus {
+  caret-color: white;
+  color: white;
 }
 
 .search {
   height: 30px;
+  width: 30px;
   border: none;
+  border-radius: 5px;
   background-color: transparent;
-  color: white;
-  font-size: medium;
+  background-image: url(../images/search_icon1.png);
 }
 
 .search:hover {
@@ -54,7 +63,7 @@ body{
   margin: 5px;
 }
 
-.item{
+.item {
   width: 200px;
   height: 300px;
   border-radius: 5px;
@@ -62,11 +71,77 @@ body{
   background-color: black;
 }
 
-.item img{
+.item img {
   width: 200px;
   height: 200px;
 }
 
-.item h5{
+.item h5 {
   color: white;
+}
+
+.errormsg {
+  width: 500px;
+  height: 50px;
+  background-color: black;
+}
+
+.errormsg h3 {
+  color: white;
+}
+
+@media (min-width: 300px) and (max-width: 420px) {
+  body {
+    background-image: url(../images/mbbg2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  .navbar {
+    background-color: black;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .searchbar {
+    outline: none;
+    border-radius: 5px;
+    background-color: transparent;
+    caret-color: white;
+    background-color: #424242;
+  }
+
+  .searchbar:focus {
+    color: white;
+    font-size: small;
+  }
+
+  .search {
+    background-color: transparent;
+    color: white;
+    font-size: medium;
+    border-radius: 5px;
+  }
+
+  .errormsg {
+    width: 250px;
+    height: 50px;
+    background-color: black;
+  }
+
+  .errormsg h3 {
+    color: white;
+  }
 }

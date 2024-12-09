@@ -8,14 +8,14 @@
   </head>
   <body>
     <div class="navbar">
-      <form action="/search" method="post">
+      <form action="/search" class="form"  method="post">
         <input
           type="text"
           class="searchbar"
           name="searchbar"
-          placeholder="TYPE CHARACTER NAME"
+          placeholder="CHARACTER NAME"
         />
-        <button class="search" value="ok">SEARCH</button>
+        <button class="search" value="ok"></button>
       </form>
     </div>
     <div class="content">
@@ -26,6 +26,11 @@
               <center><h5><%= element.name %></h5></center>
            </div>
         <% }) %>
+      <% } %>
+      <% if (locals.msg) { %>
+       <div class="errormsg">
+        <h3><%= msg %></h3>
+       </div>
       <% } %>
     </div>
     <script src="index.js"></script>
