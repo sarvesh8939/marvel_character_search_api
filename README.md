@@ -2,7 +2,7 @@
 
 ## Description
 
-The **Marvel Character Search** is a simple tool to explore and retrieve characters created by Marvel Studios. This API allows users to search for characters by typing the starting letters of their names. For now it has only 3000 searches per day from client to server. If the limit is already reached when you trying to use, don't worry, try next day and give feedback.
+The **Marvel Character Search** is a simple tool to explore and retrieve characters created by Marvel Studios. This application allows users to search for characters by typing the starting letters of their names. For now it has only 3000 searches per day from client to server. If the limit is already reached when you trying to use, don't worry, try next day and give feedback.
 
 ## Features
 
