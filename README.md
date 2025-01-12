@@ -1,4 +1,4 @@
-# Marvel Character Search API
+# Marvel Character Search web application
 
 ## Description
 
