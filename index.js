@@ -2,13 +2,16 @@ import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
 import md5 from "js-md5";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 const port = 3000;
 
 let timestamp = Date.now();
-let apikey = "b421cb4cc43f0c875b892b40465a5e31";
-let privateckey = "d60f5dd98900a7abd6b5f1ecf93ed75ca189105e";
+let apikey = process.env.APIKEY;
+let privateckey = process.env.PRIVATEKEY;
 let hash = md5(timestamp + privateckey + apikey);
 let url = "http://gateway.marvel.com/";
 
@@ -28,8 +31,8 @@ app.post("/search", async (req, res) => {
     `${url}v1/public/characters?ts=${timestamp}&apikey=${apikey}&hash=${hash}&nameStartsWith=${name}`
   );
   const result = response.data;
-  console.log(name);
-    console.log(result.data.results);
+  // console.log(name);
+  //   console.log(result.data.results);
    res.render("index.ejs", { data: result.data.results });
   } catch (error) {
      const status = res.statusCode;
