@@ -8,7 +8,7 @@ The **Marvel Character Search** is a simple tool to explore and retrieve charac
 
 - **Character Search**: It will return the marvel comic characters for the name you searched.
 
-## API Usage
+## application Usage
 
 - Enter the starting letters of the character's name in the search box.
 - Example query: Searching "iron" will return results like "Ironman."
